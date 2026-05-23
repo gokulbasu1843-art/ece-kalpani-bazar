@@ -1082,7 +1082,15 @@ background:#16a34a;">
 Verify OTP
 
 </button>
+<button
+onclick="loginAccount()"
+style="
+margin-top:10px;
+background:#0f172a;">
 
+Login
+
+</button>
 </div>
 
 </div>
@@ -1369,6 +1377,83 @@ else{
 
 alert(
 "Wrong OTP ❌"
+);
+
+}
+
+}
+
+</script>
+    <script>
+
+async function loginAccount(){
+
+let email =
+document.getElementById("studentEmail").value;
+
+let password =
+document.getElementById("studentPassword").value;
+
+if(email === "" || password === ""){
+
+alert(
+"Enter Email & Password ❌"
+);
+
+return;
+
+}
+
+try{
+
+const response =
+await fetch("/login",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+email:email,
+password:password
+
+})
+
+});
+
+const data =
+await response.json();
+
+if(data.success){
+
+alert(
+"Login Successful ✅"
+);
+
+closeRegister();
+
+document.getElementById("noteBox")
+.style.display = "flex";
+
+}
+
+else{
+
+alert(
+"Invalid Email or Password ❌"
+);
+
+}
+
+}
+
+catch(error){
+
+alert(
+"Server Error ❌"
 );
 
 }
