@@ -742,12 +742,13 @@ Notes
 <a href="#contact">
 Contact
 </a>
-    <button
+  <a> <button
 onclick="openLogin()"
-class="btn">
+class="btnn">
 
 Login
 </button>
+  </a> 
 </nav>
 
 <div class="menu-btn"
@@ -1161,10 +1162,10 @@ document.getElementById("studentName")
 .value;
 
 let email =
-document.getElementById("loginEmail").value;
+document.getElementById("studentEmail").value;
 
 let password =
-document.getElementById("loginPassword").value;
+document.getElementById("studentPassword").value;
 
 if(name === "" ||
 email === "" ||
@@ -1384,11 +1385,10 @@ alert(
 async function loginAccount(){
 
 let email =
-document.getElementById("studentEmail").value;
+document.getElementById("loginEmail").value;
 
 let password =
-document.getElementById("studentPassword").value;
-
+document.getElementById("loginPassword").value;
 if(email === "" || password === ""){
 
 alert(
@@ -1428,7 +1428,7 @@ alert(
 "Login Successful ✅"
 );
 
-closeRegister();
+closeLogin();
 
 document.getElementById("noteBox")
 .style.display = "flex";
