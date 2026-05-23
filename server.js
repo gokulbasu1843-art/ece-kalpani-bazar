@@ -74,48 +74,69 @@ const ADMIN_PASSWORD =
 
 app.post("/register", async(req,res)=>{
 
-    try{
+try{
 
-        console.log(req.body);
+console.log(req.body);
 
-        const user = new User({
+const existingUser =
+await User.findOne({
 
-            name:req.body.name,
-
-            email:req.body.email,
-
-            password:req.body.password
-
-        });
-
-        await user.save();
-
-        res.json({
-
-            success:true,
-
-            message:
-            "Account Created Successfully"
-
-        });
-
-    }
-
-    catch(error){
-
-        console.log(error);
-
-        res.json({
-
-            success:false,
-
-            message:error.message
-
-        });
-
-    }
+email:req.body.email
 
 });
+
+if(existingUser){
+
+return res.json({
+
+success:false,
+
+message:"Email already registered ❌"
+
+});
+
+}
+
+const user = new User({
+
+name:req.body.name,
+
+email:req.body.email,
+
+password:req.body.password
+
+});
+
+await user.save();
+
+res.json({
+
+success:true,
+
+message:
+"Account Created Successfully"
+
+});
+
+}
+
+catch(error){
+
+console.log(error);
+
+res.json({
+
+success:false,
+
+message:error.message
+
+});
+
+}
+
+});
+
+
 
 app.post("/login", async(req,res)=>{
 
@@ -214,10 +235,15 @@ app.post("/admin-login",(req,res)=>{
 // START SERVER
 // =========================
 
-app.listen(3000, ()=>{
+const PORT =
+process.env.PORT || 3000;
 
-    console.log(
-        "Server Running On Port 3000 🚀"
-    );
+app.listen(PORT, ()=>{
+
+console.log(
+`Server Running On Port ${PORT} 🚀`
+);
+
+
 
 });
