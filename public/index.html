@@ -525,6 +525,49 @@ footer{
     padding:22px;
 }
 
+    
+    .whatsapp{
+
+position:fixed;
+
+bottom:25px;
+right:25px;
+
+width:65px;
+height:65px;
+
+background:#25d366;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:32px;
+
+text-decoration:none;
+
+color:white;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.2);
+
+z-index:999;
+
+transition:.3s;
+
+}
+
+.whatsapp:hover{
+
+transform:scale(1.1);
+
+}
+
+
+    
 /* =========================
 POPUP
 ========================= */
@@ -1021,10 +1064,22 @@ placeholder="Enter Email">
 <input type="password"
 id="studentPassword"
 placeholder="Create Password">
+    
+<input type="text"
+id="otpInput"
+placeholder="Enter OTP">
+    
+<button onclick="sendOTP()">
+Send OTP
+</button>
 
-<button onclick="createAccount()">
+<button
+onclick="verifyOTP()"
+style="
+margin-top:10px;
+background:#16a34a;">
 
-Create Account
+Verify OTP
 
 </button>
 
@@ -1114,6 +1169,16 @@ password === ""){
 
 alert(
 "Please fill all fields ❌"
+);
+
+return;
+
+}
+
+if(otpVerified === false){
+
+alert(
+"Please verify OTP first ❌"
 );
 
 return;
@@ -1228,7 +1293,96 @@ document.getElementById("noteBox")
 }
 
 </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
 
+emailjs.init("9gGKHifZbvMCwAYEG");
+
+</script>
+    <script>let generatedOTP = "";
+
+function sendOTP(){
+
+generatedOTP =
+Math.floor(100000 + Math.random() * 900000);
+
+let email =
+document.getElementById("studentEmail").value;
+
+emailjs.send(
+
+"service_zz2tol8",
+
+"template_jqb7mh9",
+
+{
+
+email: email,
+otp: generatedOTP
+
+}
+
+)
+
+.then(() => {
+
+alert(
+"OTP Sent Successfully ✅"
+);
+
+})
+
+.catch(() => {
+
+alert(
+"OTP Send Failed ❌"
+);
+
+});
+
+}
+    </script>
+
+<script>
+
+let otpVerified = false;
+
+function verifyOTP(){
+
+let enteredOTP =
+document.getElementById("otpInput").value;
+
+if(enteredOTP == generatedOTP){
+
+otpVerified = true;
+
+alert(
+"OTP Verified ✅"
+);
+
+createAccount();
+
+}
+
+else{
+
+alert(
+"Wrong OTP ❌"
+);
+
+}
+
+}
+
+</script>
+    <a href="https://wa.me/918453670810"
+class="whatsapp"
+target="_blank">
+
+💬
+   
+</a>
 </body>
 
 </html>
