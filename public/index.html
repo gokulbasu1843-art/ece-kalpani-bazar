@@ -742,7 +742,12 @@ Notes
 <a href="#contact">
 Contact
 </a>
+    <button
+onclick="openLogin()"
+class="btn">
 
+Login
+</button>
 </nav>
 
 <div class="menu-btn"
@@ -1082,15 +1087,7 @@ background:#16a34a;">
 Verify OTP
 
 </button>
-<button
-onclick="loginAccount()"
-style="
-margin-top:10px;
-background:#0f172a;">
 
-Login
-
-</button>
 </div>
 
 </div>
@@ -1164,12 +1161,10 @@ document.getElementById("studentName")
 .value;
 
 let email =
-document.getElementById("studentEmail")
-.value;
+document.getElementById("loginEmail").value;
 
 let password =
-document.getElementById("studentPassword")
-.value;
+document.getElementById("loginPassword").value;
 
 if(name === "" ||
 email === "" ||
@@ -1461,6 +1456,22 @@ alert(
 }
 
 </script>
+    <script>
+    function openLogin(){
+
+document.getElementById("loginBox")
+.style.display = "flex";
+
+}
+
+function closeLogin(){
+
+document.getElementById("loginBox")
+.style.display = "none";
+
+}
+
+        </script>
     <a href="https://wa.me/918453670810"
 class="whatsapp"
 target="_blank">
@@ -1468,6 +1479,42 @@ target="_blank">
 💬
    
 </a>
+    <div class="login-box"
+id="loginBox">
+
+<div class="login-content">
+
+<span class="close-btn"
+onclick="closeLogin()">
+
+×
+
+</span>
+
+<h2>
+
+Student Login 🔐
+
+</h2>
+
+<input type="email"
+id="loginEmail"
+placeholder="Enter Email">
+
+<input type="password"
+id="loginPassword"
+placeholder="Enter Password">
+
+<button
+onclick="loginAccount()">
+
+Login
+
+</button>
+
+</div>
+
+</div>
 </body>
 
 </html>
