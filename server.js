@@ -148,9 +148,12 @@ password
 });
 
 if(user){
-
 res.json({
-success:true
+
+success:true,
+
+name:user.name
+
 });
 
 }
