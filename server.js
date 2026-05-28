@@ -200,7 +200,35 @@ message:
 }
 
 });
+app.post("/google-login",
+async(req,res)=>{
 
+const { name, email } = req.body;
+
+let user =
+await User.findOne({ email });
+
+if(!user){
+
+user = new User({
+
+name,
+email,
+password:"Google Account"
+
+});
+
+await user.save();
+
+}
+
+res.json({
+
+success:true
+
+});
+
+});
 // GET USERS API
 // =========================
 
