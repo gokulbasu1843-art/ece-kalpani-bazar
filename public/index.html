@@ -1242,15 +1242,13 @@ let currentNote = "";
 
 function openNote(noteId){
 
-currentNote = noteId;
-
 let user =
 localStorage.getItem("studentEmail");
 
 if(user){
 
-document.getElementById("noteBox")
-.style.display = "flex";
+window.location.href =
+"/profile.html";
 
 }else{
 
