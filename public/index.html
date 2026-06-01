@@ -80,7 +80,7 @@ nav{
 
     display:flex;
 
-    gap:35px;
+    gap:30px;
 }
 
 nav a{
@@ -184,7 +184,7 @@ HERO
 
 .hero-text{
 
-    flex:1;
+    flex:2;
 }
 
 .hero-text span{
@@ -741,66 +741,6 @@ text-decoration:none;
 }
 
 
-@media(max-width:900px){
-
-    nav{
-        display:none;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-
-    .hero{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        padding-top:70px;
-    }
-
-    .hero-text h1{
-
-        font-size:32px;
-    }
-
-    .hero-text p{
-
-        font-size:12px;
-    }
-
-    .hero-image{
-
-        width:100%;
-    }
-
-    section{
-
-        padding:60px 5%;
-    }
-
-    .title{
-
-        font-size:25px;
-    }
-
-    /* =========================
-COURSES
-========================= */
-
-.course-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(150px,2fr));
-
-    gap:10px;
-}
-
-}
-
 
 /* =========================
 PREMIUM UI UPGRADE
@@ -838,8 +778,8 @@ linear-gradient(
 45deg,
 #2563eb,
 #7c3aed
-);
 
+);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
@@ -1465,7 +1405,7 @@ font-size:14px;
 
 .course-grid,
 .notes-grid{
-grid-template-columns:1fr;
+grid-template-columns:2fr;
 }
 
 .course-card,
@@ -1553,7 +1493,7 @@ padding:12px;
 }
 
 }
-    
+
 </style>
 
 </head>
@@ -1564,13 +1504,26 @@ padding:12px;
 
 <header>
 
-<div class="logo">ECE Computer Kalpani Bazar</div>
+<div class="logo">
+
+ECE Computer Kalpani Bazar
+</div>
 
 <nav>
+
 <a href="#">Home</a>
-<a href="#courses">Courses</a>
-<a href="#notes">Notes</a>
-<a href="#contact">Contact</a>
+
+<a href="#courses">
+Courses
+</a>
+
+<a href="#notes">
+Notes
+</a>
+
+<a href="#contact">
+Contact
+</a>
  
 <button
 onclick="openLogin()"
