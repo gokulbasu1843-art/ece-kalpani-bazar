@@ -148,37 +148,60 @@ margin-bottom:50px;
 
 /* COURSES */
 
-.course-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
+/* =========================
+OUR PAID COURSES
+========================= */
 
-.course-card{
-background:white;
-padding:30px;
-border-radius:20px;
+.paid-title{
+
 text-align:center;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-transition:.3s;
-border-top:4px solid #2563eb;
+
+font-size:36px;
+
+font-weight:800;
+
+color:#1e3a8a;
+
+margin-bottom:30px;
+
 }
 
-.course-card:hover{
-transform:translateY(-8px);
-}
+.course-list{
 
-.icon{
-width:80px;
-height:80px;
-margin:auto;
-border-radius:20px;
-background:#dbeafe;
 display:flex;
+
+flex-wrap:wrap;
+
 justify-content:center;
-align-items:center;
-font-size:35px;
-margin-bottom:20px;
+
+gap:15px;
+
+}
+
+.course-list h3{
+
+padding:10px 18px;
+
+font-size:18px;
+
+font-weight:600;
+
+color:#334155;
+
+border-bottom:2px solid #2563eb;
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.course-list h3:hover{
+
+color:#2563eb;
+
+transform:translateY(-3px);
+
 }
 
 /* NOTES */
@@ -570,157 +593,27 @@ Enroll Now
 
 </section>
 
-<!-- COURSES -->
-
-<section class="courses"
-id="courses">
-
-<h2 class="title">
-
-Our Paid Courses
-
+<h2 class="paid-title">
+🎓 Our Paid Courses
 </h2>
 
-<p class="subtitle">
+<div class="course-list">
 
-Professional Computer Courses Available Here
+<h3>💻 PGDCA</h3>
 
-</p>
+<h3>🖥️ ADCA</h3>
 
-<div class="course-grid">
+<h3>📚 DCA</h3>
 
-<div class="course-card">
+<h3>📊 Advanced Excel</h3>
 
-<div class="icon">
+<h3>🧾 Tally Prime + GST</h3>
 
-💻
+<h3>🌐 Web Designing</h3>
 
-</div>
-
-<h3>PGDCA</h3>
-
-<p>
-
-Professional Diploma in Computer Application
-
-</p>
+<h3>🛒 E-Commerce</h3>
 
 </div>
-
-<div class="course-card">
-
-<div class="icon">
-
-🖥️
-
-</div>
-
-<h3>ADCA</h3>
-
-<p>
-
-Advanced Diploma in Computer Application
-
-</p>
-
-</div>
-
-<div class="course-card">
-
-<div class="icon">
-
-
-
-</div>
-
-<h3>DCA</h3>
-
-<p>
-
-Diploma in Computer Application
-
-</p>
-
-</div>
-
-
-
-<div class="course-card">
-
-<div class="icon">
-
-💻
-
-</div>
-
-<h3>WEB DESIGNING</h3>
-
-<p>
-
-
-
-</p>
-
-</div>
-
-
-<div class="course-card">
-
-<div class="icon">
-
-
-
-</div>
-
-<h3>ADOBE PHOTOSHOP</h3>
-
-<p>
-
-
-
-</p>
-
-</div>
-
-<div class="course-card">
-
-<div class="icon">
-
-
-
-</div>
-
-<h3>COODING</h3>
-
-<p>
-
-
-
-</p>
-
-</div>
-
-<div class="course-card">
-
-<div class="icon">
-
-🧾
-
-</div>
-
-<h3>Tally Prime</h3>
-
-<p>
-
-Accounting & GST Training With Tally Prime
-
-</p>
-
-</div>
-
-</div>
-
-</section>
 
 <!-- NOTES -->
 
