@@ -92,35 +92,51 @@ transform:translateY(-3px);
 
 width:100%;
 
-background:#f59e0b;
+background:#2563eb;
 
 color:white;
 
-text-align:center;
+overflow:hidden;
 
-padding:12px;
+padding:12px 0;
 
-font-size:16px;
+white-space:nowrap;
+
+box-shadow:
+0 3px 10px rgba(0,0,0,.1);
+
+}
+
+.notice-text{
+
+display:inline-block;
+
+padding-left:100%;
+
+font-size:15px;
 
 font-weight:700;
 
-animation:blink 2s infinite;
+animation:
+scrollNotice 20s linear infinite;
 
 }
 
-@keyframes blink{
+@keyframes scrollNotice{
 
 0%{
-opacity:1;
-}
-
-50%{
-opacity:.7;
+transform:translateX(0);
 }
 
 100%{
-opacity:1;
+transform:translateX(-100%);
 }
+
+}
+
+.notice-bar:hover .notice-text{
+
+animation-play-state:paused;
 
 }
  
@@ -586,7 +602,13 @@ openLogin();
 
 </div>
 <div class="notice-bar">
-📢 Admission Going On For 2026 Session | PGDCA | ADCA | DCA | Tally Prime | Advanced Excel | Contact: +91 8453670810
+
+<div class="notice-text">
+
+🎓 Admissions Open for 2026 Session | PGDCA • ADCA • DCA • Tally Prime + GST • Advanced Excel | 📞 +91 8453670810
+
+</div>
+
 </div>
 <!-- HERO -->
 
