@@ -275,7 +275,7 @@ background:#ffffff;
 
 .notes-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(4,1fr));
+grid-template-columns:repeat(2,1fr));
 gap:20px;
 }
 
@@ -436,7 +436,7 @@ font-size:30px;
 
 .course-grid,
 .notes-grid{
-grid-template-columns:(2, 1fr);
+grid-template-columns:repeat(2, 1fr);
 }
 
 .btn,
@@ -764,9 +764,11 @@ Moments from ECE Computer Center
 .gallery-grid{
 
 display:grid;
+.process-box{
 
-grid-template-columns:
-repeat(auto-fit,minmax(4,1fr));
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
 
 gap:20px;
 
@@ -774,48 +776,7 @@ margin-top:30px;
 
 }
 
-.gallery-card{
-
-background:white;
-
-border-radius:20px;
-
-overflow:hidden;
-
-box-shadow:
-0 8px 25px rgba(0,0,0,.08);
-
-transition:.3s;
-
-}
-
-.gallery-card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.gallery-card img{
-
-width:100%;
-
-height:220px;
-
-object-fit:cover;
-
-}
-
-.gallery-card h3{
-
-padding:15px;
-
-text-align:center;
-
-color:#1e3a8a;
-
-}
-
- @media(max-width:768px){
+@media(max-width:768px){
 
 .process-box{
 
@@ -825,9 +786,24 @@ gap:12px;
 
 }
 
+}
+ @media(max-width:768px){
+
 .step{
 
-padding:10px;
+padding:15px 10px;
+
+}
+
+.step h3{
+
+font-size:13px;
+
+}
+
+.step p{
+
+font-size:11px;
 
 }
 
@@ -837,20 +813,6 @@ width:45px;
 height:45px;
 
 font-size:18px;
-
-}
-
-.step h3{
-
-font-size:14px;
-
-}
-
-.step p{
-
-font-size:11px;
-
-line-height:1.5;
 
 }
 
